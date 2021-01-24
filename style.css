@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+#main {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-image: url('./clock-bg2.png');
+    background-size: contain;
+}
+
+.cadre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+}
+
+.cadre::before {
+    content: '';
+    position: absolute;
+    bottom: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cadre:nth-child(1)::before {
+    height: 45%;
+    border-left: 1px solid red;
+}
+
+.cadre:nth-child(2)::before {
+    height: 35%;
+    border-left: 2px solid blue;
+}
+
+.cadre:nth-child(3)::before {
+    height: 22.5%;
+    border-left: 5px solid #333;
+}
