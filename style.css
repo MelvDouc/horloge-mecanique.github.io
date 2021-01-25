@@ -2,11 +2,24 @@
     box-sizing: border-box;
 }
 
-#main {
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 25px;
+    margin-left: 1.5em;
+    display: flex;
+    justify-content: space-around;
+}
+
+#horloge {
     position: relative;
+    z-index: 0;
     width: 600px;
     height: 600px;
-    background-image: url('./clock-bg2.png');
+    background-image: url('./img/clock-roman.png');
     background-size: contain;
 }
 
@@ -39,4 +52,30 @@
 .cadre:nth-child(3)::before {
     height: 22.5%;
     border-left: 5px solid #333;
+}
+
+/*  */
+
+button {
+    all: initial;
+    background-color: lime;
+    color: #fff;
+    height: 30px;
+    border-radius: 30px;
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    padding: .33em .55em;
+    position: relative;
+    z-index: 1;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: limegreen;
+}
+
+button:active {
+    transform: scale(.92);
 }
