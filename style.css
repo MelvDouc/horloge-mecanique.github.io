@@ -7,49 +7,67 @@ body {
     padding: 0;
 }
 
+/*  */
+
+h1 {
+    margin-top: 0;
+    padding: .42em;
+    background-color: teal;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+/*  */
+
 .container {
-    margin-top: 25px;
-    margin-left: 1.5em;
-    display: flex;
-    justify-content: space-around;
+    width: 95%;
+    min-height: 100vh;
+    margin: 1.5rem auto 0 auto;
+    position: relative;
 }
 
 #horloge {
-    position: relative;
+    /* border: 1px solid black; */
+    position: absolute;
+    left: 0;
+    top: 0;
     z-index: 0;
-    width: 600px;
-    height: 600px;
+    width: 40%;
+    padding-top: 40%;
     background-image: url('./img/clock-roman.png');
+    background-repeat: no-repeat;
     background-size: contain;
 }
 
-.cadre {
+.aiguille {
+    /* border: 1px dashed darkgreen; */
     position: absolute;
-    top: 0;
     left: 0;
-    width: 600px;
-    height: 600px;
+    top: 0;
+    width: 100%;
+    padding-top: 100%;
 }
 
-.cadre::before {
+.aiguille::before {
     content: '';
     position: absolute;
-    bottom: 300px;
+    bottom: 50%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.cadre:nth-child(1)::before {
+.aiguille:nth-child(1)::before {
     height: 45%;
     border-left: 1px solid red;
 }
 
-.cadre:nth-child(2)::before {
+.aiguille:nth-child(2)::before {
     height: 35%;
     border-left: 2px solid blue;
 }
 
-.cadre:nth-child(3)::before {
+.aiguille:nth-child(3)::before {
     height: 22.5%;
     border-left: 5px solid #333;
 }
@@ -58,17 +76,17 @@ body {
 
 button {
     all: initial;
+    padding: .5em .8em;
     background-color: lime;
     color: #fff;
-    height: 30px;
-    border-radius: 30px;
-    font-family: Verdana;
-    font-weight: bold;
     text-align: center;
-    margin-top: 50px;
-    padding: .33em .55em;
-    position: relative;
-    z-index: 1;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    border-radius: 30px;
+    position: absolute;
+    right: 5%;
+    top: 5%;
 }
 
 button:hover {
@@ -78,4 +96,15 @@ button:hover {
 
 button:active {
     transform: scale(.92);
+}
+
+@media screen and (max-width: 992px){
+    .container {
+        width: 100%;
+    }
+
+    button {
+        padding: .2em;
+        font-size: 12px;
+    }
 }

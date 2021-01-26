@@ -1,9 +1,9 @@
-let temps = setInterval(obtenirTemps, 1000)
+let temps = setInterval(rotationAiguilles, 1000)
 
-function obtenirTemps() {
-    let secondes = document.querySelector('.cadre:nth-child(1)');
-    let minutes = document.querySelector('.cadre:nth-child(2)');
-    let heures = document.querySelector('.cadre:nth-child(3)');
+function rotationAiguilles() {
+    let secondes = document.querySelector('.aiguille:nth-child(1)');
+    let minutes = document.querySelector('.aiguille:nth-child(2)');
+    let heures = document.querySelector('.aiguille:nth-child(3)');
     let d = new Date();
     let s = d.getSeconds();
     let m = d.getMinutes();
@@ -21,7 +21,6 @@ function obtenirTemps() {
 //\\
 
 const horloge = document.querySelector('#horloge');
-const bgBtn = document.querySelector('#bg-btn');
 const arrierePlans = ['clock-arabic.gif', 'clock-arabic2.jpg', 'clock-arabic3.png', 'clock-no-numbers.png', 'clock-roman.png'];
 let index = 0;
 
@@ -29,5 +28,3 @@ function changerImage() {
     index = (++index % arrierePlans.length);
     horloge.style.backgroundImage = `url('./img/${arrierePlans[index]}')`;
 }
-
-bgBtn.addEventListener('click', changerImage);
